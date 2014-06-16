@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="angularApp01">
+<head lang="en">
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div>
+        <h1>Test application</h1>
+    </div>
+    <hr />
+    <div>
+        <a ng-href="#/homepage">homepage</a> |
+        <a ng-href="#/page/1">page 1</a> |
+        <a ng-href="#/page/2">page 2</a>
+    </div>
+    <hr />
+    <div ng-view=""></div>
+    <!-- angular libraries -->
+    <script src="../libs/angular/angular.js"></script>
+    <script src="../libs/angular-route/angular-route.js"></script>
+    <script src="../libs/angular-resource/angular-resource.js"></script>
+    <!-- application library -->
+    <script src="./js/angularApp01.js"></script>
+</body>
+</html>
