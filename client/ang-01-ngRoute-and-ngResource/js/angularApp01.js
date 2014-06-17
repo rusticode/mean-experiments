@@ -29,7 +29,6 @@ angularApp01.controller("pageController", function($scope, $routeParams) {
 
 angularApp01.controller("listController", function ListController($scope, $routeParams, $resource) {
     $scope.title = "Application List Title ( page : " + $routeParams.id + " )";
-
     var Items = $resource('data/ang-01-data.json');
     $scope.items = Items.query(function() {
         console.log($scope.items);
