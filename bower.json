@@ -30,6 +30,7 @@
     "angular": "~1.2.18",
     "angular-resource": "~1.2.18",
     "angular-route": "latest",
-    "angular-cookies": "latest"
+    "angular-cookies": "latest",
+    "bower-foundation-css": "*"
   }
 }
