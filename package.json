@@ -18,6 +18,7 @@
     "mongodb",
     "redis",
     "mean"
+
   ],
   "author": "rusticode",
   "license": "MIT",
@@ -25,10 +26,11 @@
     "url": "https://github.com/rusticode/mean-experiments/issues"
   },
   "homepage": "https://github.com/rusticode/mean-experiments",
-  "devDependencies": {
-    "http-server": "^0.6.1"
-  },
   "dependencies": {
-    "karma": "^0.12.16"
+  },
+  "devDependencies": {
+    "karma": "^0.12.16",
+    "http-server": "^0.6.1",
+    "karma-jasmine": "^0.2.2"
   }
 }

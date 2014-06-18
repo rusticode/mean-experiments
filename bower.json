@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "homepage": "https://github.com/rusticode/mean-experiments",
   "authors": [
-    "Marek Karwowski <marek@i-evaluation.com>"
+    "Marek Karwowski <marek@rusticode.com>"
   ],
   "description": "MEAN Stack Experiments",
   "moduleType": [
@@ -32,5 +32,8 @@
     "angular-route": "latest",
     "angular-cookies": "latest",
     "bower-foundation-css": "*"
+  },
+  "devDependencies": {
+    "jasmine": "~2.0.0"
   }
 }
