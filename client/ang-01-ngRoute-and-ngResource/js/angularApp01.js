@@ -36,15 +36,12 @@ angularApp01.controller("pageController", function($scope, $routeParams) {
     $scope.title = "Application Page Title ( page : " + $routeParams.id + " )";
 });
 
-angularApp01.controller("listController", function($scope, $resource) {
+angularApp01.controller("listController", function($scope, ItemProxy) {
     $scope.title = "Application List Title";
-    var Items = $resource('data/ang-01-data.json');
-    $scope.items = Items.query(function() {
-        console.log($scope.items);
-    });
+    $scope.items = ItemProxy.getItems();
 });
 
-angularApp01.factory("ItemProxy", function($resource) {
+angularApp01.factory("ItemProxy", function ($resource) {
     var Items = $resource('data/ang-01-data.json');
     return {
         getItems : function () {
