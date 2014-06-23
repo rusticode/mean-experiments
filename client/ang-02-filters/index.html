@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="angularApp02">
+<head lang="en">
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="../libs/bower-foundation-css/foundation.css"/>
+    <style>
+        fieldset { padding: 4px;}
+        .divider { border-bottom: solid 1px #aaa; height: 5px; clear: both;}
+        .row-item div {padding: 5px;}
+        .row-item i { font-size: 0.9em; color: #999;}
+        .row-item .tags { font-size: 0.9em; color: #99a;}
+    </style>
+</head>
+<body ng-controller="mainPageController">
+
+    <div>
+        <h3>{{title}}</h3>
+    </div>
+    <div class="row">
+    <fieldset class="small-8 columns">
+        <label>any search:</label><input type="text" ng-model="search.$"/>
+    </fieldset>
+    <fieldset class="small-4 columns">
+        <label>id:</label><input type="text" ng-model="search.id"/>
+    </fieldset>
+    </div>
+
+    <div class="row">
+    <fieldset class="small-4 columns">
+        <label>title:</label><input type="text" ng-model="search.title"/>
+    </fieldset>
+    <fieldset class="small-4 columns">
+        <label>description:</label><input type="text" ng-model="search.description"/>
+    </fieldset>
+    <fieldset class="small-4 columns">
+        <label>tags:</label><input type="text" ng-model="search.tags"/>
+    </fieldset>
+    </div>
+
+
+    <div class="row" ng-repeat="item in items | filter:search">
+        <div class="small-1 columns">{{item.id}}</div>
+        <div class="small-10 columns row-item">
+            <div>{{item.title}} <i>{{item.description}}</i></div>
+            <div class="tags">{{item.tags}}</div>
+        </div>
+        <div class="divider small-12" />
+    </div>
+
+
+    <!-- angular libraries -->
+    <script src="../libs/angular/angular.js"></script>
+    <script src="../libs/angular-resource/angular-resource.js"></script>
+    <!-- application library -->
+    <script src="./js/angularApp02.js"></script>
+</body>
+</html>
