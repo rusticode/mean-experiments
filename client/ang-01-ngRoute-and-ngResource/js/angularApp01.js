@@ -1,4 +1,4 @@
-var angularApp01 = angular.module("angularApp02", ["ngRoute", "ngResource"]);
+var angularApp01 = angular.module("angularApp01", ["ngRoute", "ngResource"]);
 
 angularApp01.config(function($routeProvider) {
     $routeProvider.
