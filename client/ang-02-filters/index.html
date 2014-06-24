@@ -42,7 +42,10 @@
     <div class="row" ng-repeat="item in items | filter:search">
         <div class="small-1 columns">{{item.id}}</div>
         <div class="small-10 columns row-item">
-            <div>{{item.title}} <i>{{item.description}}</i></div>
+            <div>
+                <span>{{item.title | lowercase | capitalize }}</span>
+                <i>{{item.description}}</i>
+            </div>
             <div class="tags">{{item.tags}}</div>
         </div>
         <div class="divider small-12" />
