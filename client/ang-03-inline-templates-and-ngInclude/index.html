@@ -5,6 +5,7 @@
 
     <link rel="stylesheet" href="../libs/bower-foundation-css/foundation.css"/>
     <style>
+        body { padding: 10px; }
         fieldset { padding: 4px;}
         .divider { border-bottom: solid 1px #aaa; height: 5px; clear: both;}
         .row-item div {padding: 5px;}
@@ -18,17 +19,12 @@
         <h3>{{title}}</h3>
     </div>
     <div class="row">
-    <fieldset class="small-8 columns">
+    <fieldset class="small-12 columns">
         <label>any search:</label><input type="text" ng-model="search.$"/>
     </fieldset>
-    <fieldset class="small-4 columns">
-        <label>id:</label><input type="text" ng-model="search.id"/>
-    </fieldset>
     </div>
     <div class="row">
-        Notice single quotation marks inside of <code>ng-include</code> code
-    </div>
-    <div class="row">
+        <p>Notice single quotation marks inside of <code>ng-include</code> code</p>
         <code><pre>
             ng-include="'partial/itemTemplate.html'"
         </pre></code>
