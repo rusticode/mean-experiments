@@ -3,6 +3,7 @@ var angularApp02 = angular.module("angularApp03", ['ngResource']);
 angularApp02.controller("mainPageController", function($scope, ItemProxy) {
     $scope.title = "Search Engine List";
     $scope.items = ItemProxy.getItems();
+    $scope.templateUrl = 'partial/itemTemplate1.html';
 });
 
 angularApp02.factory("ItemProxy", function ($resource) {

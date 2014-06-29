@@ -7,6 +7,7 @@
     <style>
         body { padding: 10px; }
         fieldset { padding: 4px;}
+        .row
         .divider { border-bottom: solid 1px #aaa; height: 5px; clear: both;}
         .row-item div {padding: 5px;}
         .row-item i { font-size: 0.9em; color: #999;}
@@ -30,11 +31,23 @@
         </pre></code>
     </div>
 
-    <div class="row">
-        <div ng-repeat="item in items | filter:search " ng-include="'partial/itemTemplate.html'"></div>
+    <div class="row  panel">
+        <div class="small-3 columns">
+            <input type="radio" ng-model="templateUrl" value="partial/itemTemplate1.html" /> - Loose template
+        </div>
+        <div class="small-3 columns">
+            <input type="radio" ng-model="templateUrl" value="partial/itemTemplate2.html" /> - Expanded Template
+        </div>
+        <div class="small-6 columns">
+            Selected template: <b>{{templateUrl}}</b>
+        </div>
     </div>
 
-    <script type="text/ng-template" id="partial/itemTemplate.html">
+    <div class="row">
+        <div ng-repeat="item in items | filter:search " ng-include="templateUrl"></div>
+    </div>
+
+    <script type="text/ng-template" id="partial/itemTemplate1.html">
         <div class="small-1 columns">{{item.id}}</div>
         <div class="small-10 columns row-item">
             <div>
@@ -44,6 +57,14 @@
             <div class="tags">{{item.tags}}</div>
         </div>
         <div class="divider small-12" />
+    </script>
+
+    <script type="text/ng-template" id="partial/itemTemplate2.html">
+        <div>
+            <h3>{{item.title}}</h3>
+            <p>{{item.description}}</p>
+            <p>{{item.tags}}</p>
+        </div>
     </script>
 
     <!-- angular libraries -->
