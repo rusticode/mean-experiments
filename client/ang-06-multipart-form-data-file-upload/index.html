@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="../libs/bower-foundation-css/foundation.css"/>
+    <style>
+        body { padding: 10px; }
+    </style>
+</head>
+<body ng-app="angularApp06">
+
+<div ng-controller="FileUploadController">
+    <input type="file" file-model="myFile"/>
+    <button ng-click="sendFile()">Send Directive File</button>
+</div>
+
+<div>
+    <form method="post" action="?" enctype="multipart/form-data">
+        File to upload:  <input type="file" name="upfile"/>
+        <input type="submit" class="button" value="Send file"/>
+    </form>
+</div>
+<!-- angular libraries -->
+<script src="../libs/angular/angular.js"></script>
+<script src="js/angularApp06.js"></script>
+</body>
+</html>
