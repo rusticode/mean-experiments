@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="../libs/bower-foundation-css/foundation.css"/>
+    <style>
+        body { padding: 10px; }
+    </style>
+</head>
+<body ng-app="angularApp05">
+
+    <div output-generator></div>
+
+<script id="template/output-generator.html" type="text/ng-template">
+    <div>TEMPLATE</div>
+    <textarea id="template" ng-model="template" ng-change="update"></textarea>
+
+    <div>MODEL</div>
+    <textarea ng-model="modelString" ng-change="update"></textarea>
+
+    <div>HTML OUTPUT</div>
+    <textarea ng-model="output"></textarea>
+
+    <div>HTML SANITIZED OUTPUT</div>
+    <textarea ng-model="cleanOutput"></textarea>
+
+    <div>HTML PREVIEW</div>
+    <hr />
+    <div id="preview"></div>
+    <hr />
+</script>
+
+<!-- angular libraries -->
+<script src="libs/jquery-latest.js"></script>
+<script src="../libs/angular/angular.js"></script>
+<script src="js/modules/angSanitizer/angularSanitizer.js"></script>
+<script src="js/angularApp05.js"></script>
+</body>
+</html>
