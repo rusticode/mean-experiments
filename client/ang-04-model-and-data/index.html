@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html ng-app="angularApp04">
+<head lang="en">
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="../libs/bower-foundation-css/foundation.css"/>
+    <style>
+        body { padding: 10px; }
+        fieldset { padding: 4px;}
+        .row
+        .divider { border-bottom: solid 1px #aaa; height: 5px; clear: both;}
+        .row-item div {padding: 5px;}
+        .row-item i { font-size: 0.9em; color: #999;}
+        .row-item .tags { font-size: 0.9em; color: #99a;}
+    </style>
+</head>
+<body ng-controller="MainPageController">
+
+    <div class="row">
+        <h3>{{title}}</h3>
+    </div>
+    <div class="row">
+    <fieldset class="small-12 columns">
+        <label>any search:</label><input type="text" ng-model="search.$"/>
+    </fieldset>
+    </div>
+
+    <div class="row">
+        <div class="small-4 columns">
+            <div ng-repeat="item in items | filter:search">
+                <div class="small-1 columns">{{item.id}}</div>
+                <div class="small-10 columns row-item">
+                    <div>
+                        <span>{{item.title}}</span>
+                        <i>{{item.description}}</i>
+                    </div>
+                    <div class="tags">{{item.tags}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="small-4 columns">
+            <div ng-repeat="item in items | filter:search">
+                <div class="small-1 columns">{{item.id}}</div>
+                <div class="small-11 columns row-item">
+                    <input ng-model="item.title" type="text"/>
+                    <textarea ng-model="item.description"></textarea>
+                    <input ng-model="item.tags" type="text"/>
+                </div>
+                <div class="divider small-12"></div>
+            </div>
+        </div>
+        <div class="small-4 columns">
+            <div ng-repeat="item in items | filter:search" ng-controller="InternalController">
+                <div class="small-1 columns">{{id}}</div>
+                <div class="small-11 columns row-item">
+                    <input ng-model="title" type="text"/>
+                    <textarea ng-model="description"></textarea>
+                    <input ng-model="tags" type="text"/>
+                </div>
+                <div class="divider small-12"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- angular libraries -->
+    <script src="../libs/angular/angular.js"></script>
+    <script src="../libs/angular-resource/angular-resource.js"></script>
+    <!-- application library -->
+    <script src="./js/angularApp04.js"></script>
+</body>
+</html>
