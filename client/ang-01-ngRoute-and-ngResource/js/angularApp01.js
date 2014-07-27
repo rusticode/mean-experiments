@@ -4,19 +4,19 @@ angularApp01.config(function($routeProvider) {
     $routeProvider.
         when('/homepage', {
             templateUrl: 'partials/homePartial.html',
-            controller: 'homepageController'
+            controller: 'HomePageController'
         }).
         when('/page/:id', {
             templateUrl: 'partials/pagePartial.html',
-            controller: 'pageController'
+            controller: 'PageController'
         }).
         when('/list', {
             templateUrl: 'partials/listPartial.html',
-            controller: 'listController'
+            controller: 'ListController'
         }).
         when('/resolved-list', {
             templateUrl: 'partials/listPartial.html',
-            controller: 'listController',
+            controller: 'ListController',
             resolve: {
                 items : function(ItemProxy) {
                     ItemProxy.getItems();
@@ -28,15 +28,15 @@ angularApp01.config(function($routeProvider) {
         });
 })
 
-angularApp01.controller("homepageController", function($scope) {
+angularApp01.controller("HomePageController", function($scope) {
     $scope.title = "Application Homepage Title";
 });
 
-angularApp01.controller("pageController", function($scope, $routeParams) {
+angularApp01.controller("PageController", function($scope, $routeParams) {
     $scope.title = "Application Page Title ( page : " + $routeParams.id + " )";
 });
 
-angularApp01.controller("listController", function($scope, ItemProxy) {
+angularApp01.controller("ListController", function($scope, ItemProxy) {
     $scope.title = "Application List Title";
     $scope.items = ItemProxy.getItems();
 });

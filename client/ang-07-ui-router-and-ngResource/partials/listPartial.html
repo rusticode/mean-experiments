@@ -1,0 +1,19 @@
+<h2>Page Partial</h2>
+<h3>{{title}}</h3>
+
+<div class="row">
+    <table class="small-12 columns">
+        <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>url</th>
+            <th>description</th>
+        </tr>
+        <tr ng-repeat="item in items">
+            <td>{{item.id}}</td>
+            <td>{{item.title}}</td>
+            <td>{{item.url}}</td>
+            <td>{{item.description}}</td>
+        </tr>
+    </table>
+</div>

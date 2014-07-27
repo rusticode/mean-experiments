@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="angularApp07">
+<head lang="en">
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="../libs/bower-foundation-css/foundation.css"/>
+</head>
+<body>
+    <div>
+        <h1>Test application</h1>
+    </div>
+    <hr />
+    <div>
+        <a ui-sref="homepage">homepage</a> |
+        pages
+        [
+        <a ui-sref="page.id({id: 1})">page 1</a> |
+        <a ui-sref="page.id({id: 2})">page 2</a> |
+        <a ui-sref="page.list">resources</a> |
+        <a ui-sref="page.resolved-list">resources<sup>+</sup></a>
+        ]
+    </div>
+    <hr />
+    <div ui-view></div>
+
+    <!-- inline templates -->
+    <script type="text/ng-template" id="partials/homePartial.html">
+        <h2>Homepage Partial</h2>
+        <h3>{{page.title}}</h3>
+        <p>{{page.content}}</p>
+    </script>
+
+    <script type="text/ng-template" id="partials/pagePartial.html">
+        <h2>Page Partial</h2>
+        <h3>{{page.title}}</h3>
+        <p>{{page.content}}</p>
+        <div ui-view></div>
+    </script>
+
+    <script type="text/ng-template" id="partials/listPartial.html">
+        <table class="small-12 columns">
+            <tr>
+                <th>id</th>
+                <th>title</th>
+                <th>url</th>
+                <th>description</th>
+            </tr>
+            <tr ng-repeat="item in items">
+                <td>{{item.id}}</td>
+                <td>{{item.title}}</td>
+                <td>{{item.url}}</td>
+                <td>{{item.description}}</td>
+            </tr>
+        </table>
+    </script>
+
+    <!-- angular libraries -->
+    <script src="../libs/angular/angular.js"></script>
+    <script src="../libs/angular-resource/angular-resource.js"></script>
+    <script src="../libs/angular-ui-router/release/angular-ui-router.js"></script>
+    <!-- application library -->
+    <script src="./js/angularApp07.js"></script>
+</body>
+</html>
