@@ -1,0 +1,25 @@
+{
+  "name": "ang-01-ngRoute-and-ngResource",
+  "version": "0.0.1",
+  "description": "Example of usage ngRoute and ngResource",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "karma start ang-01-karma.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/N/A"
+  },
+  "keywords": [
+    "N/A"
+  ],
+  "author": "N/A",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/N/A/issues"
+  },
+  "homepage": "https://github.com/N/A"
+}
